@@ -91,7 +91,7 @@ Structure in the *.h5 file will be:
 - `conv_filename::String`: Name of the output file.
 - `conv_data_dir::String="../conv_data/"`: Path where the converted files should be stored as a string.
 ...
-# Examples
+# Example
 ```julia-repl
 julia> convert_dset_to_h5("../data/*-1000V*.dat", "Output_Filename", conv_data_dir="../conv_data/")
 ```
