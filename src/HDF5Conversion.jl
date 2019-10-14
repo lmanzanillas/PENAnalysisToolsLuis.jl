@@ -3,7 +3,7 @@
 
 Converts one Struck (*.dat) file to *.h5 format.
 Structure in the *.h5 file will be:
-- filename (group)
+- raw-data (group)
     - chid       : list of channel IDs
     - timestamps : timestamps for each event
     - samples    : samples for each event in one matrix
