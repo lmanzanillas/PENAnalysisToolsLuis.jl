@@ -1,5 +1,5 @@
 """
-        read_data_from_struck(filename:String; just_evt_t=false)
+        `read_data_from_struck(filename:String; just_evt_t=false)`
 
 Reads one Struck (*.dat) file and returns a Named Table. 
 ...
