@@ -1,3 +1,13 @@
+"""
+       ## read_data_from_struck(filename:String; just_evt_t=false)
+
+Reads one Struck (*.dat) file and returns a Named Table. 
+...
+# Arguments
+- `filename::String`: Path to *.dat file as a string.
+- `just_evt_t::Boolean=false`: If this is set to `true` the function will only return the timestamps.
+...
+"""
 function read_data_from_struck(filename::String; just_evt_t=false)
 
     input = open(CompressedFile(filename))

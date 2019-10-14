@@ -1,9 +1,9 @@
 """
-        convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
+       ## convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
 
 Converts one Struck (*.dat) file to *.h5 format.
 Structure in the *.h5 file will be:
-- filename
+- filename (group)
     - chid       : list of channel IDs
     - timestamps : timestamps for each event
     - samples    : samples for each event in one matrix
@@ -71,7 +71,31 @@ function getUserInput(T=String,msg="")
     end
 end
   
-  
+"""
+       ## convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/")
+
+Converts several Struck (*.dat) file to one *.h5 format.
+Structure in the *.h5 file will be:
+- filename 1 (group)
+    - chid       : list of channel IDs
+    - timestamps : timestamps for each event
+    - samples    : samples for each event in one matrix
+- filename 2 (group)
+    - chid       : list of channel IDs
+    - timestamps : timestamps for each event
+    - samples    : samples for each event in one matrix
+- and so on
+...
+# Arguments
+- `dset_glob_str::String`: Path to *.dat file as a Glob-string.
+- `conv_filename::String`: Name of the output file.
+- `conv_data_dir::String="../conv_data/"`: Path where the converted files should be stored as a string.
+...
+# Examples
+```julia-repl
+julia> convert_dset_to_h5("../data/*-1000V*.dat", "Output_Filename", conv_data_dir="../conv_data/")
+```
+"""
 function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/")
     
     if isfile(conv_data_dir*conv_filename*".h5")
