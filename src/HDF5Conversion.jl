@@ -3,16 +3,25 @@ function convert_struck_to_h5(filename::String; conv_data_dir="../conv_data/")
     if !isfile(filename)
         return "File does not exist: "*filename
     end
-    
+
     if length(split(basename(filename), ".dat")) == 2
         real_filename = split(basename(filename), ".dat")[1]
     else 
         return "Wrong file format: "*filename
     end
+
+    if isfile(conv_data_dir*real_filename*".h5")
+        ans = getUserInput(String, "File exists. Do you want to overwrite? Y/n");
+        if ans == "Y" || ans == "yes" || ans == "y" || ans == ""
+            rm(conv_data_dir*real_filename*".h5");
+        else 
+            return "Please enter a different filename then."
+        end
+    end
     
     h5 = h5open(conv_data_dir*real_filename*".h5", "w") do file
         g    = g_create(file, "raw-data")
-        dset = read_data_from_struck(file[1])
+        dset = read_data_from_struck(filename)
 
         y = length(dset.samples);
         x = length(dset.samples[1]);
