@@ -7,8 +7,12 @@ Structure in the *.h5 file will be:
     - chid       : list of channel IDs
     - timestamps : timestamps for each event
     - samples    : samples for each event in one matrix
+...
+# Arguments
+- `filename::String`: Path to *.dat file as a string.
+- `conv_data_dir::String="../conv_data/"`: Path where the converted files should be stored as a string.
+...
 """
-
 function convert_struck_to_h5(filename::String; conv_data_dir="../conv_data/")
     if !isfile(filename)
         return "File does not exist: "*filename
