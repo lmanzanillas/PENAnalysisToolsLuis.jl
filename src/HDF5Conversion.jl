@@ -1,5 +1,5 @@
 """
-       ## convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
+        convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
 
 Converts one Struck (*.dat) file to *.h5 format.
 Structure in the *.h5 file will be:
@@ -72,7 +72,7 @@ function getUserInput(T=String,msg="")
 end
   
 """
-       ## convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/")
+        convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/")
 
 Converts several Struck (*.dat) file to one *.h5 format.
 Structure in the *.h5 file will be:
