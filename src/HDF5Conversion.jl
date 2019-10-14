@@ -1,3 +1,13 @@
+"""
+        convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
+
+Converts one Struck (*.dat) file to *.h5 format.
+Structure in the *.h5 file will be:
+- filename
+    - chid       : list of channel IDs
+    - timestamps : timestamps for each event
+    - samples    : samples for each event in one matrix
+"""
 
 function convert_struck_to_h5(filename::String; conv_data_dir="../conv_data/")
     if !isfile(filename)
