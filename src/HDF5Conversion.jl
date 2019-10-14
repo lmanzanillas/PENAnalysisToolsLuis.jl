@@ -12,7 +12,7 @@ function convert_struck_to_h5(filename::String; conv_data_dir="../conv_data/")
     
     h5 = h5open(conv_data_dir*real_filename*".h5", "w") do file
         g    = g_create(file, "raw-data")
-        dset = read_data_from_struck(files[1])
+        dset = read_data_from_struck(file[1])
 
         y = length(dset.samples);
         x = length(dset.samples[1]);
