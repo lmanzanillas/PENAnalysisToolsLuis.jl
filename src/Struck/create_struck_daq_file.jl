@@ -99,7 +99,7 @@ function create_struck_daq_file(settings::NamedTuple)
         return(temp)
     end
     timestamp = string(now())
-    open("pmt_daq_test.scala", "w") do file
+    open("pmt_daq_dont_move.scala", "w") do file
         for ln in new_daq
             write(file, ln*"\n")
         end    

@@ -40,7 +40,7 @@ function take_struck_data(settings::NamedTuple)
     i = 1
     while i <= settings.number_of_measurements
         chmod("./", 0o777)
-        run(`./pmt_daq_test.scala`);    
+        run(`./pmt_daq_dont_move.scala`);    
         i += 1
     end
     #rm("pmt_daq_"*timestamp*".scala")
