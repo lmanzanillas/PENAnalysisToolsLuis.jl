@@ -15,7 +15,7 @@ using ProgressMeter
 export convert_struck_to_h5, convert_dset_to_h5, read_data_from_struck
 
 include("HDF5Conversion.jl")
-include("ReadStruck.jl")
+include("Struck/ReadStruck.jl")
 
 
 end
