@@ -27,10 +27,10 @@ Creates an individual `pmt_daq.scala` file and takes data which are converted to
 """
 function take_struck_data(settings::NamedTuple)
     if !isdir(settings.data_dir)
-        mkdir(settings.data_dir)
+        mkpath(settings.data_dir, mode = 0o777)
     end
     if !isdir(settings.conv_data_dir)
-        mkdir(settings.conv_data_dir)
+        mkpath(settings.conv_data_dir, mode = 0o777)
     end
     current_dir = pwd()
     cd(settings.data_dir)
@@ -39,7 +39,7 @@ function take_struck_data(settings::NamedTuple)
     
     i = 1
     while i <= settings.number_of_measurements
-        #run(`chmod -R 777 ./`)
+        chmod("./", 0o777)
         daq = "./pmt_daq_"*timestamp*".scala"
         run(`$daq`);    
         i += 1
@@ -51,5 +51,5 @@ function take_struck_data(settings::NamedTuple)
         settings.output_basename, 
         conv_data_dir = settings.conv_data_dir,
         delete        = settings.delete_dat)
-    #run(`chmod -R 777 ./`)
+    chmod("./", 0o777)
 end
