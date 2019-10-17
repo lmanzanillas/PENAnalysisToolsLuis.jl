@@ -5,5 +5,5 @@ Glob
 HDF5
 Pkg
 ProgressMeter
-SIS3316Digitizers
+https://github.com/oschulz/SIS3316Digitizers.jl
 TypedTables
