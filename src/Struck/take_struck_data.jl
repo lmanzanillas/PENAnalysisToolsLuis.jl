@@ -39,8 +39,9 @@ function take_struck_data(settings::NamedTuple)
     
     i = 1
     while i <= settings.number_of_measurements
-        #run(`chmod -R 777 ./`)
-        run(`./pmt_daq.scala`);    
+        #run(`chmqod -R 777 ./`)
+        daq = "./pmt_daq_"*timestamp*".scala"
+        run(`$daq`);    
         i += 1
     end
     rm("pmt_daq_"*timestamp*".scala")
