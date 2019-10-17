@@ -1,9 +1,9 @@
 ArraysOfArrays
-CompressedStreams
 DataFrames
 Glob
 HDF5
 Pkg
 ProgressMeter
-https://github.com/oschulz/SIS3316Digitizers.jl
+SIS3316Digitizers
 TypedTables
+CompressedStreams
