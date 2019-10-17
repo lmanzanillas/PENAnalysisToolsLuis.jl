@@ -20,8 +20,8 @@ function read_data_from_struck(filename::String; just_evt_t=false)
         df = DataFrame(
             evt_t   = Float64[],
             samples = Array{Int32,1}[],
-            chid    = Int32[],
-            energy  = []
+            chid    = Int32[]#,
+            #energy  = []
         )
     end
 
@@ -37,7 +37,7 @@ function read_data_from_struck(filename::String; just_evt_t=false)
             if just_evt_t
                 push!(df, time(sorted[evt][ch]))
             else
-                push!(df, (time(sorted[evt][ch]), sorted[evt][ch].samples, sorted[evt][ch].chid, sorted[evt][ch].energy))
+                push!(df, (time(sorted[evt][ch]), sorted[evt][ch].samples, sorted[evt][ch].chid))#, sorted[evt][ch].energy))
             end
 
         end
@@ -47,6 +47,6 @@ function read_data_from_struck(filename::String; just_evt_t=false)
     if just_evt_t
         return (evt_t = df.evt_t)
     else
-        return (evt_t = df.evt_t, samples = df.samples, chid = df.chid, energy = df.energy)
+        return (evt_t = df.evt_t, samples = df.samples, chid = df.chid)#, energy = df.energy)
     end
 end
