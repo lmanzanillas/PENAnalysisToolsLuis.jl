@@ -1,8 +1,9 @@
-Glob
-CompressedStreams
-SIS3316Digitizers
-HDF5
-DataFrames
 ArraysOfArrays
-TypedTables
+CompressedStreams
+DataFrames
+Glob
+HDF5
+Pkg
 ProgressMeter
+SIS3316Digitizers
+TypedTables
