@@ -9,6 +9,9 @@ Reads one Struck (*.dat) file and returns a Named Table. Keys: samples, chid, ev
 ...
 """
 function read_data_from_struck(filename::String; just_evt_t=false)
+    if split(filename, ".dat") != 2
+        return "Wrong fileformat! Only '*.dat' is supported."
+    end
 
     input = open(CompressedFile(filename))
     reader = eachchunk(input, SIS3316Digitizers.UnsortedEvents)

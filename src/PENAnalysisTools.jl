@@ -7,13 +7,14 @@ using CompressedStreams
 using SIS3316Digitizers
 using HDF5
 using DataFrames
+using Dates
 using ArraysOfArrays
 using TypedTables
 using ProgressMeter
 using Pkg
 
 
-export convert_struck_to_h5, convert_struck_to_h5, convert_dset_to_h5, create_struck_daq_file, read_data_from_struck, take_struck_data
+export convert_struck_to_h5, convert_struck_to_h5, convert_dset_to_h5, read_data_from_struck, take_struck_data
 
 include("HDF5Conversion.jl")
 include("Struck/read_data_from_struck.jl")
