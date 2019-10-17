@@ -20,7 +20,8 @@ Creates an individual `pmt_daq.scala` file and takes data which are converted to
 `gapTime = 2, `
 `nPreTrig = 192,`
 `nSamples = 256,`
-`saveEnergy = true`
+`saveEnergy = true,`
+`delete_dat = true`
 `) `
 ...
 """
@@ -47,6 +48,7 @@ function take_struck_data(settings::NamedTuple)
     glob_str = settings.data_dir*"*"*settings.output_basename*"*.dat"
     convert_dset_to_h5(glob_str, 
         settings.output_basename, 
-        conv_data_dir=settings.conv_data_dir)
+        conv_data_dir = settings.conv_data_dir,
+        delete        = settings.delete_dat)
     run(`chmod -R 777 ./`)
 end
