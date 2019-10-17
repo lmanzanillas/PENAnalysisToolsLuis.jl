@@ -40,11 +40,10 @@ function take_struck_data(settings::NamedTuple)
     i = 1
     while i <= settings.number_of_measurements
         chmod("./", 0o777)
-        daq = "./pmt_daq_"*timestamp*".scala"
-        run(`$daq`);    
+        run(`./pmt_daq_test.scala`);    
         i += 1
     end
-    rm("pmt_daq_"*timestamp*".scala")
+    #rm("pmt_daq_"*timestamp*".scala")
     cd(current_dir)
     glob_str = settings.data_dir*"*"*settings.output_basename*"*.dat"
     convert_dset_to_h5(glob_str, 
