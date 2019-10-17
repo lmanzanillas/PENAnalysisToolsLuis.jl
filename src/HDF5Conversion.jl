@@ -169,10 +169,10 @@ function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_d
     end 
     @info "Total filesize: "*string(round(filesize, digits=2))*" MB"
     @info "Compressed filesize: "*string(round(stat(conv_data_dir*conv_filename*".h5").size/1e6, digits=2))*" MB"
-    ans = getUserInput(String, "Do you want to delete the *.dat files? Y/n");
-    if ans == "Y" || ans == "yes" || ans == "y" || ans == ""
-        for file in files
-            rm(file)
-        end
-    end
+    #ans = getUserInput(String, "Do you want to delete the *.dat files? Y/n");
+    #if ans == "Y" || ans == "yes" || ans == "y" || ans == ""
+    #    for file in files
+    #        rm(file)
+    #    end
+    #end
 end
