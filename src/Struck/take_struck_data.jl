@@ -39,7 +39,7 @@ function take_struck_data(settings::NamedTuple)
     
     i = 1
     while i <= settings.number_of_measurements
-        chmod("./", 0o777)
+        #chmod("./", 0o777)
         run(`./pmt_daq_dont_move.scala`);    
         i += 1
     end
@@ -50,5 +50,5 @@ function take_struck_data(settings::NamedTuple)
         settings.output_basename, 
         conv_data_dir = settings.conv_data_dir,
         delete        = settings.delete_dat)
-    chmod("./", 0o777)
+    #chmod("./", 0o777)
 end

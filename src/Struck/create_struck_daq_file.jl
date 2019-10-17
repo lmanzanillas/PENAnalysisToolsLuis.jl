@@ -104,6 +104,6 @@ function create_struck_daq_file(settings::NamedTuple)
             write(file, ln*"\n")
         end    
     end
-    chmod("./", 0o777)
+    #chmod("./", 0o777)
     return timestamp
 end
