@@ -31,11 +31,11 @@ function take_struck_data(settings::NamedTuple)
     if !isdir(settings.conv_data_dir)
         mkdir(settings.conv_data_dir)
     end
-
-    create_struck_daq_file(settings)
-
     current_dir = pwd()
     cd(settings.data_dir)
+    create_struck_daq_file(settings)
+
+    
     i = 1
     while i <= settings.number_of_measurements
         run(`chmod -R 777 ./`)
