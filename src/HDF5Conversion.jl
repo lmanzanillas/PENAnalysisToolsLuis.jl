@@ -162,7 +162,7 @@ function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_d
                 g = g_create(f, real_filename)
                 g["timestamps", "chunk", 500] = evt_t;
                 g["chid", "chunk", 500]       = chid;
-                g["raw-data", "chunk", (500,x), "shuffle", (), "deflate", 3] = samples;
+                g["samples", "chunk", (500,x), "shuffle", (), "deflate", 3] = samples;
             end
         end
         filesize += (stat(file).size)/1e6
