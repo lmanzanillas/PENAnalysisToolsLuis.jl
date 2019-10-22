@@ -2,7 +2,6 @@ ArraysOfArrays
 DataFrames
 Glob
 HDF5
-Pkg
 ProgressMeter
 SIS3316Digitizers
 TypedTables
