@@ -33,6 +33,6 @@ function findlocalmaxima(signal::Vector, threshold = 0 )
        end
    end
    inds
- end
+end
 
 

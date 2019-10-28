@@ -24,7 +24,6 @@ include("Struck/take_struck_data.jl")
 include("Algorithms/findlocalmaxima.jl")
 include("Algorithms/getbaseline.jl")
 include("Algorithms/peak_integral.jl")
-include("Algorithms/peak_integral.jl")
 
 
 end

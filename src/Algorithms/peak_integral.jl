@@ -2,6 +2,8 @@
 Find all the peaks above a certain threhsold in a waveform
 takes as entry a waveform or an array of number and return an array with the position of the maximums in the array
 ...
+#function to compute the integral of the peaks
+#look at the bins +/- 10 around the peak and add all the bins 
 # Arguments
 - signal::Vector: Wavefor to be analyzed
 - threshold: value given for the user to look for peaks above this value
@@ -9,8 +11,6 @@ takes as entry a waveform or an array of number and return an array with the pos
 """
 
 
-#function to compute the integral of the peaks
-#look at the bins +/- 10 around the peak and add all the bins 
 function peak_integral(signal::Vector, peak_position = 100)
     integral = 0
     #make sure the peak is completed
