@@ -13,8 +13,8 @@ takes as entry a waveform or an array of number and return an array with the pos
 function getbaseline(signal::Vector)
     Baseline = copy(signal)
     peaks_threshold = mean(Baseline) + 25.0 # only peaks with amplitudes larger than the average of 25 
-    peak_pos = findlocalmaxima(Baseline,peaks_threshold)
-    #peak_pos = findall(x -> x > peaks_threshold, signal)
+    #peak_pos = findlocalmaxima(Baseline,peaks_threshold)
+    peak_pos = findall(x -> x > peaks_threshold, signal)
     index_to_delete = []
     for i in peak_pos
         if length(index_to_delete) > 0 && index_to_delete[end] > i-6 #security check for two close peaks

@@ -21,9 +21,9 @@ include("HDF5Conversion.jl")
 include("Struck/read_data_from_struck.jl")
 include("Struck/create_struck_daq_file.jl")
 include("Struck/take_struck_data.jl")
-include("Algorithms/findlocalmaxima.jl")
 include("Algorithms/getbaseline.jl")
 include("Algorithms/peak_integral.jl")
+#include("Algorithms/findlocalmaxima.jl")
 
 
 end
