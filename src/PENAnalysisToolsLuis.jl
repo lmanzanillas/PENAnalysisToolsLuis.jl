@@ -15,7 +15,7 @@ using Statistics
 using Pkg
 
 
-export convert_struck_to_h5, convert_struck_to_h5, convert_dset_to_h5, read_data_from_struck, take_struck_data
+export convert_struck_to_h5, convert_struck_to_h5, convert_dset_to_h5, read_data_from_struck, take_struck_data findlocalmaxima getbaseline peak_integral
 
 include("HDF5Conversion.jl")
 include("Struck/read_data_from_struck.jl")
