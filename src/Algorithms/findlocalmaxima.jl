@@ -8,10 +8,12 @@ takes as entry a waveform or an array of number and return an array with the pos
 ...
 """
 
-function findlocalmaxima(signal::Vector, threshold > 20. )
+function findlocalmaxima(signal::Vector, threshold = 0 )
    inds = Int[]
    new_threshold = threshold
-   if threshold < 20.
+   if threshold != 0
+      new_threshold = threshold
+   else
       ground_level = mean(signal) 
       rms  = sqrt(sum(signal[:].^2.) / length(signal[:]))
       new_threshold = ground_level + 2*rms
