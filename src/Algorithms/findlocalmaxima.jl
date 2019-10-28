@@ -9,7 +9,6 @@ takes as entry a waveform or an array of number and return an array with the pos
 """
 
 function findlocalmaxima(signal::Vector, threshold = 0 )
-   #check if threshold value is given
    if threshold != 0
       threshold = threshold
    else
