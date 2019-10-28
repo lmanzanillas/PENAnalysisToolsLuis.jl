@@ -11,8 +11,8 @@ using Dates
 using ArraysOfArrays
 using TypedTables
 using ProgressMeter
-using Statistics
 using Pkg
+using Statistics
 
 
 export convert_struck_to_h5, convert_struck_to_h5, convert_dset_to_h5, read_data_from_struck, take_struck_data findlocalmaxima getbaseline peak_integral
