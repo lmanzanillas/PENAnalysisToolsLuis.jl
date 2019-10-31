@@ -1,12 +1,9 @@
 """
-Find all the peaks above a certain threhsold in a waveform
-takes as entry a waveform or an array of number and return an array with the position of the maximums in the array
 ...
-#function to compute the baselines of a given wf, it takes a wf and compute the average
-#removing +/- 5 samples around the peaks to avoid bias
-# Arguments
-- signal::Vector: Wavefor to be analyzed
-- threshold: value given for the user to look for peaks above this value
+function to compute the baseline of a given wf, it takes a wf and compute the average of the values in the wf
+removing +/- 5 samples around the peaks to avoid bias
+ Arguments
+- signal::Vector: Waveform to be analyzed
 ...
 """
 

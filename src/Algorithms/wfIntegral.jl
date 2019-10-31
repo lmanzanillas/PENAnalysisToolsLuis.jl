@@ -1,11 +1,8 @@
 """
-Find all the peaks above a certain threhsold in a waveform
-takes as entry a waveform or an array of number and return an array with the position of the maximums in the array
-#function integral of all the waveform
+function to compute the integral of a waveform, probably can be replace by sum julia function but some cuts are planned to be included...
 ...
 # Arguments
 - signal::Vector: Wavefor to be analyzed
-- threshold: value given for the user to look for peaks above this value
 ...
 """
 

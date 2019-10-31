@@ -1,16 +1,18 @@
 """
 Find all the peaks above a certain threhsold in a waveform
-takes as entry a waveform or an array of number and return an array with the position of the maximums in the array
+takes as entry a waveform and returns an array with the position of the maximums in the waveform
+this information can be used to compute the amplitud of the peaks just evaluating wf[i]
+or the integral of peak
 ...
 # Arguments
 - signal::Vector: Wavefor to be analyzed
-- threshold: value given for the user to look for peaks above this value
+- threshold: optional value given for the user to look for peaks above this value
+if threshold is not provided it will compute the rms and look for peaks above twice the rms
 ...
 """
 
 function findLocalMaxima(signal::Vector, threshold = 0 )
    inds = Int[]
-   new_threshold = threshold
    if threshold != 0
       new_threshold = threshold
    else
