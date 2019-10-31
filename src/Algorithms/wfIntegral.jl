@@ -11,7 +11,7 @@ takes as entry a waveform or an array of number and return an array with the pos
 
 
 
-function wf_integral(signal::Vector)
+function wfIntegral(signal::Vector)
     integral = 0
     nSamples = size(signal)[1]
     for i = 1 : nSamples

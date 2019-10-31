@@ -11,11 +11,11 @@ takes as entry a waveform or an array of number and return an array with the pos
 """
 
 
-function peak_integral(signal::Vector, peak_position = 100)
+function peakIntegral(signal::Vector, peakPosition = 1)
     integral = 0
-    #make sure the peak is completed
-    if  12 < peak_position < length(signal)-12
-        for i = peak_position-11 : peak_position+11
+    #make sure the peak is completed asking to be at least 12 samples after the beggining or before the end
+    if  12 < peakPosition < length(signal)-12
+        for i = peakPosition-11 : peakPosition+11
             #if signal[i] > ground
                 integral += signal[i]
             #end
