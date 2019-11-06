@@ -13,7 +13,7 @@ function peakIntegral(signal::Vector, peakPosition = 1)
     integral = 0
     #make sure the peak is completed asking to be at least 12 samples after the beggining or before the end
     if  12 < peakPosition < length(signal)-12
-        for i = peakPosition-11 : peakPosition+11
+        for i = peakPosition-3 : peakPosition+3
             integral += signal[i]
         end
     end
