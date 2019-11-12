@@ -9,10 +9,10 @@ function to compute the integral of a waveform, probably can be replace by sum j
 
 
 function wfIntegral(signal::Vector)
-    integral = 0
+    integral = 0.0; 
     nSamples = size(signal)[1]
     for i = 1 : nSamples
-        integral += signal[i]
+        integral += signal[i]*1.0
     end
     integral
 end

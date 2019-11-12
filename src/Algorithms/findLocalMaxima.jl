@@ -18,7 +18,7 @@ function findLocalMaxima(signal::Vector, threshold = 0 )
    else
       ground_level = mean(signal) 
       rms  = sqrt(sum(signal[:].^2.) / length(signal[:]))
-      new_threshold = ground_level + 2*rms
+      new_threshold = ground_level + 1.5*rms
    end
    
    if length(signal)>1
@@ -30,7 +30,7 @@ function findLocalMaxima(signal::Vector, threshold = 0 )
                push!(inds,i)
            end
        end
-       if signal[end]>signal[end-1]
+       if signal[end]>signal[end-1] && signal[end] > new_threshold 
            push!(inds,length(signal))
        end
    end
