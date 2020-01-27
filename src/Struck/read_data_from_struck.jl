@@ -33,12 +33,17 @@ function read_data_from_struck(filename::String; just_evt_t=false)
         sorted = sortevents(unsorted)
         #return sorted
         for evt in eachindex(sorted)
-            ch = collect(keys(sorted[evt]))[1]
+	    #check if all channels have signals
+	    if prod([i in collect(keys(sorted[evt])) for i in 1:6]) == 0; continue; end
+
+	    #save information
+            for ch in sort(collect(keys(sorted[evt])))#ch = collect(keys(sorted[evt]))[1]
             if just_evt_t
                 push!(df, time(sorted[evt][ch]))
             else
-                push!(df, (time(sorted[evt][ch]), sorted[evt][ch].samples, sorted[evt][ch].chid, sorted[evt][ch].energy))
+                push!(df, (time(sorted[evt][ch]), sorted[evt][ch].samples, ch, sorted[evt][ch].energy))
             end
+	    end
 
         end
         empty!(sorted)

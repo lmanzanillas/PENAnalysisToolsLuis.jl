@@ -1,0 +1,132 @@
+2020-01-27T16:22:49Z [INFO ] Main$$anon$1$logger$: Ready
+2020-01-27T16:22:49Z [INFO ] Main$$anon$1$logger$: ADC hostname: $adcHostname
+2020-01-27T16:22:49Z [INFO ] Main$$anon$1$logger$: Output basename: $outputBasename
+2020-01-27T16:22:49Z [INFO ] Main$$anon$1$logger$: Measurement time: $measurementTime s
+2020-01-27T16:22:49Z [INFO ] a.e.s.Slf4jLogger: Slf4jLogger started
+2020-01-27T16:22:49Z [DEBUG] a.e.EventStream: logger log1-Slf4jLogger started
+2020-01-27T16:22:49Z [DEBUG] a.e.EventStream: Default Loggers started
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316$SIS3316Impl: Creating object for TypedActor[akka://daqcore/user/adc#-598342872](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory#-1085486893](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: preStart of TypedActor[akka://daqcore/user/adc/memory#-1085486893](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#-1085486893](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) initializing
+2020-01-27T16:22:49Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme#1404127384](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.UDPClient$ClientImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#623858047](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme#1404127384](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1404127384](class daqcore.io.SIS3316VMEGateway$GatewayImpl) initializing
+2020-01-27T16:22:49Z [DEBUG] a.i.UdpConnection: Successfully connected to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T16:22:49Z [DEBUG] d.i.UDPClient$ClientImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#623858047](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#623858047](class daqcore.io.UDPClient$ClientImpl) initializing
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316$SIS3316Impl: preStart of TypedActor[akka://daqcore/user/adc#-598342872](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#-598342872](class daqcore.devices.SIS3316$SIS3316Impl) initializing
+2020-01-27T16:22:49Z [DEBUG] d.d.SIS3316$SIS3316Impl: Starting capture
+2020-01-27T16:22:49Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Creating object for TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: preStart of TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:22:49Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl) initializing
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316$SIS3316Impl: Stopping capture
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316$SIS3316Impl: Finishing capture
+2020-01-27T16:22:59Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Closing TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:22:59Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: postStop of TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:22:59Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#1669895116](class daqcore.io.OutputStreamWriter$WriterImpl) cleaned up
+2020-01-27T16:22:59Z [DEBUG] d.i.UDPClient$ClientImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#623858047](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:22:59Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#623858047](class daqcore.io.UDPClient$ClientImpl) cleaned up
+2020-01-27T16:22:59Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme#1404127384](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:22:59Z [DEBUG] a.i.UdpConnection: Closing UDP connection to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T16:22:59Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1404127384](class daqcore.io.SIS3316VMEGateway$GatewayImpl) cleaned up
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: postStop of TypedActor[akka://daqcore/user/adc/memory#-1085486893](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#-1085486893](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) cleaned up
+2020-01-27T16:22:59Z [DEBUG] a.i.UdpConnection: Connection closed to [gelab-fadc08/134.107.13.60:57344], stopping listener
+2020-01-27T16:22:59Z [INFO ] a.a.LocalActorRef: Message [akka.io.UdpConnected$Disconnected$] from Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-265086030] to Actor[akka://daqcore/user/adc/memory/vme/udpClient#623858047] was not delivered. [1] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:22:59Z [INFO ] a.a.LocalActorRef: Message [akka.actor.Terminated] from Actor[akka://daqcore/user/adc/memory/vme/udpClient#623858047] to Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-265086030] was not delivered. [2] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:22:59Z [INFO ] a.a.LocalActorRef: Message [daqcore.io.SIS3316VMEGateway$GatewayImpl$CheckActiveRequest$] from Actor[akka://daqcore/deadLetters] to Actor[akka://daqcore/user/adc/memory/vme#1404127384] was not delivered. [3] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316$SIS3316Impl: postStop of TypedActor[akka://daqcore/user/adc#-598342872](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:22:59Z [INFO ] a.a.LocalActorRef: Message [akka.dispatch.sysmsg.Terminate] from Actor[akka://daqcore/user/adc/raw-data-writer#1669895116] to Actor[akka://daqcore/user/adc/raw-data-writer#1669895116] was not delivered. [4] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:22:59Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#-598342872](class daqcore.devices.SIS3316$SIS3316Impl) cleaned up
+2020-01-27T16:22:59Z [DEBUG] a.e.EventStream: shutting down: StandardOutLogger started
+2020-01-27T16:46:29Z [INFO ] Main$$anon$1$logger$: Ready
+2020-01-27T16:46:29Z [INFO ] Main$$anon$1$logger$: ADC hostname: $adcHostname
+2020-01-27T16:46:29Z [INFO ] Main$$anon$1$logger$: Output basename: $outputBasename
+2020-01-27T16:46:29Z [INFO ] Main$$anon$1$logger$: Measurement time: $measurementTime s
+2020-01-27T16:46:29Z [INFO ] a.e.s.Slf4jLogger: Slf4jLogger started
+2020-01-27T16:46:29Z [DEBUG] a.e.EventStream: logger log1-Slf4jLogger started
+2020-01-27T16:46:29Z [DEBUG] a.e.EventStream: Default Loggers started
+2020-01-27T16:46:29Z [DEBUG] d.d.SIS3316$SIS3316Impl: Creating object for TypedActor[akka://daqcore/user/adc#1000503891](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:46:29Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory#727849352](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:46:29Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: preStart of TypedActor[akka://daqcore/user/adc/memory#727849352](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:46:29Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#727849352](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) initializing
+2020-01-27T16:46:29Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme#1753085828](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:46:29Z [DEBUG] d.i.UDPClient$ClientImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:46:29Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme#1753085828](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:46:29Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1753085828](class daqcore.io.SIS3316VMEGateway$GatewayImpl) initializing
+2020-01-27T16:46:30Z [DEBUG] a.i.UdpConnection: Successfully connected to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T16:46:30Z [DEBUG] d.i.UDPClient$ClientImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:46:30Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999](class daqcore.io.UDPClient$ClientImpl) initializing
+2020-01-27T16:46:30Z [DEBUG] d.d.SIS3316$SIS3316Impl: preStart of TypedActor[akka://daqcore/user/adc#1000503891](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:46:30Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#1000503891](class daqcore.devices.SIS3316$SIS3316Impl) initializing
+2020-01-27T16:46:30Z [DEBUG] d.d.SIS3316$SIS3316Impl: Starting capture
+2020-01-27T16:46:30Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Creating object for TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:46:30Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: preStart of TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:46:30Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl) initializing
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316$SIS3316Impl: Stopping capture
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316$SIS3316Impl: Finishing capture
+2020-01-27T16:46:40Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Closing TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:46:40Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: postStop of TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T16:46:40Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#220762384](class daqcore.io.OutputStreamWriter$WriterImpl) cleaned up
+2020-01-27T16:46:40Z [DEBUG] d.i.UDPClient$ClientImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T16:46:40Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999](class daqcore.io.UDPClient$ClientImpl) cleaned up
+2020-01-27T16:46:40Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme#1753085828](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T16:46:40Z [DEBUG] a.i.UdpConnection: Closing UDP connection to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T16:46:40Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1753085828](class daqcore.io.SIS3316VMEGateway$GatewayImpl) cleaned up
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: postStop of TypedActor[akka://daqcore/user/adc/memory#727849352](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#727849352](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) cleaned up
+2020-01-27T16:46:40Z [DEBUG] a.i.UdpConnection: Connection closed to [gelab-fadc08/134.107.13.60:57344], stopping listener
+2020-01-27T16:46:40Z [INFO ] a.a.LocalActorRef: Message [akka.io.UdpConnected$Disconnected$] from Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-1080414200] to Actor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999] was not delivered. [1] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:46:40Z [INFO ] a.a.LocalActorRef: Message [akka.actor.Terminated] from Actor[akka://daqcore/user/adc/memory/vme/udpClient#1375670999] to Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-1080414200] was not delivered. [2] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:46:40Z [INFO ] a.a.LocalActorRef: Message [daqcore.io.SIS3316VMEGateway$GatewayImpl$CheckActiveRequest$] from Actor[akka://daqcore/deadLetters] to Actor[akka://daqcore/user/adc/memory/vme#1753085828] was not delivered. [3] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316$SIS3316Impl: postStop of TypedActor[akka://daqcore/user/adc#1000503891](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T16:46:40Z [INFO ] a.a.LocalActorRef: Message [akka.dispatch.sysmsg.Terminate] from Actor[akka://daqcore/user/adc/raw-data-writer#220762384] to Actor[akka://daqcore/user/adc/raw-data-writer#220762384] was not delivered. [4] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T16:46:40Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#1000503891](class daqcore.devices.SIS3316$SIS3316Impl) cleaned up
+2020-01-27T16:46:40Z [DEBUG] a.e.EventStream: shutting down: StandardOutLogger started
+2020-01-27T17:01:48Z [INFO ] Main$$anon$1$logger$: Ready
+2020-01-27T17:01:48Z [INFO ] Main$$anon$1$logger$: ADC hostname: $adcHostname
+2020-01-27T17:01:48Z [INFO ] Main$$anon$1$logger$: Output basename: $outputBasename
+2020-01-27T17:01:48Z [INFO ] Main$$anon$1$logger$: Measurement time: $measurementTime s
+2020-01-27T17:01:48Z [INFO ] a.e.s.Slf4jLogger: Slf4jLogger started
+2020-01-27T17:01:48Z [DEBUG] a.e.EventStream: logger log1-Slf4jLogger started
+2020-01-27T17:01:48Z [DEBUG] a.e.EventStream: Default Loggers started
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316$SIS3316Impl: Creating object for TypedActor[akka://daqcore/user/adc#891098663](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory#22338978](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: preStart of TypedActor[akka://daqcore/user/adc/memory#22338978](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#22338978](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) initializing
+2020-01-27T17:01:48Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme#1199311423](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.UDPClient$ClientImpl: Creating object for TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme#1199311423](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1199311423](class daqcore.io.SIS3316VMEGateway$GatewayImpl) initializing
+2020-01-27T17:01:48Z [DEBUG] a.i.UdpConnection: Successfully connected to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T17:01:48Z [DEBUG] d.i.UDPClient$ClientImpl: preStart of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089](class daqcore.io.UDPClient$ClientImpl) initializing
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316$SIS3316Impl: preStart of TypedActor[akka://daqcore/user/adc#891098663](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#891098663](class daqcore.devices.SIS3316$SIS3316Impl) initializing
+2020-01-27T17:01:48Z [DEBUG] d.d.SIS3316$SIS3316Impl: Starting capture
+2020-01-27T17:01:48Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Creating object for TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: preStart of TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T17:01:48Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl) initializing
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316$SIS3316Impl: Stopping capture
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316$SIS3316Impl: Finishing capture
+2020-01-27T17:01:58Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: Closing TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T17:01:58Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: postStop of TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl)
+2020-01-27T17:01:58Z [DEBUG] d.i.OutputStreamWriter$WriterImpl: TypedActor[akka://daqcore/user/adc/raw-data-writer#-555786739](class daqcore.io.OutputStreamWriter$WriterImpl) cleaned up
+2020-01-27T17:01:58Z [DEBUG] d.i.UDPClient$ClientImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089](class daqcore.io.UDPClient$ClientImpl)
+2020-01-27T17:01:58Z [DEBUG] d.i.UDPClient$ClientImpl: TypedActor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089](class daqcore.io.UDPClient$ClientImpl) cleaned up
+2020-01-27T17:01:58Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: postStop of TypedActor[akka://daqcore/user/adc/memory/vme#1199311423](class daqcore.io.SIS3316VMEGateway$GatewayImpl)
+2020-01-27T17:01:58Z [DEBUG] a.i.UdpConnection: Closing UDP connection to [gelab-fadc08/134.107.13.60:57344]
+2020-01-27T17:01:58Z [DEBUG] d.i.SIS3316VMEGateway$GatewayImpl: TypedActor[akka://daqcore/user/adc/memory/vme#1199311423](class daqcore.io.SIS3316VMEGateway$GatewayImpl) cleaned up
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: postStop of TypedActor[akka://daqcore/user/adc/memory#22338978](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl)
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316Memory$SIS3316MemoryImpl: TypedActor[akka://daqcore/user/adc/memory#22338978](class daqcore.devices.SIS3316Memory$SIS3316MemoryImpl) cleaned up
+2020-01-27T17:01:58Z [DEBUG] a.i.UdpConnection: Connection closed to [gelab-fadc08/134.107.13.60:57344], stopping listener
+2020-01-27T17:01:58Z [INFO ] a.a.LocalActorRef: Message [akka.io.UdpConnected$Disconnected$] from Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-947878404] to Actor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089] was not delivered. [1] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T17:01:58Z [INFO ] a.a.LocalActorRef: Message [akka.actor.Terminated] from Actor[akka://daqcore/user/adc/memory/vme/udpClient#1321436089] to Actor[akka://daqcore/system/IO-UDP-CONN/selectors/$a/0#-947878404] was not delivered. [2] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T17:01:58Z [INFO ] a.a.LocalActorRef: Message [daqcore.io.SIS3316VMEGateway$GatewayImpl$CheckActiveRequest$] from Actor[akka://daqcore/deadLetters] to Actor[akka://daqcore/user/adc/memory/vme#1199311423] was not delivered. [3] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316$SIS3316Impl: postStop of TypedActor[akka://daqcore/user/adc#891098663](class daqcore.devices.SIS3316$SIS3316Impl)
+2020-01-27T17:01:58Z [INFO ] a.a.LocalActorRef: Message [akka.dispatch.sysmsg.Terminate] from Actor[akka://daqcore/user/adc/raw-data-writer#-555786739] to Actor[akka://daqcore/user/adc/raw-data-writer#-555786739] was not delivered. [4] dead letters encountered. This logging can be turned off or adjusted with configuration settings 'akka.log-dead-letters' and 'akka.log-dead-letters-during-shutdown'.
+2020-01-27T17:01:58Z [DEBUG] d.d.SIS3316$SIS3316Impl: TypedActor[akka://daqcore/user/adc#891098663](class daqcore.devices.SIS3316$SIS3316Impl) cleaned up
+2020-01-27T17:01:58Z [DEBUG] a.e.EventStream: shutting down: StandardOutLogger started
