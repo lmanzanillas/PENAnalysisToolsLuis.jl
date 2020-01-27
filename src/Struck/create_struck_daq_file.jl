@@ -26,7 +26,7 @@ saveEnergy = true
 ...
 """
 function create_struck_daq_file(settings::NamedTuple)
-    new_daq = open(dirname(pathof(PENAnalysisTools))*"/Struck/pmt_daq_6pmt_backup.scala", "r") do file
+    new_daq = open(dirname(pathof(PENAnalysisToolsLuis))*"/Struck/pmt_daq_6pmt_backup.scala", "r") do file
         temp = readlines(file)
         i = 1
         while i <= length(temp)
