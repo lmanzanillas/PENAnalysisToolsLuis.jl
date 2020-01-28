@@ -97,7 +97,7 @@ Structure in the *.h5 file will be:
 julia> convert_dset_to_h5("../data/*-1000V*.dat", "Output_Filename", conv_data_dir="../conv_data/")
 ```
 """
-function convert_dset_to_h5(dset_glob_str::String, conv_filename::String, conv_data_dir="../conv_data/", delete = false)
+function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/", delete = false)
     timestamp = string(now())
     conv_filename = conv_filename*timestamp
     if isfile(conv_data_dir*conv_filename*".h5")
