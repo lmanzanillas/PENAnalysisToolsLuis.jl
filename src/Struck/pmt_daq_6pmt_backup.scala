@@ -80,8 +80,8 @@ def configureADC_hpge(): Unit = {
     )
   )
 
-  adc.nsamples_pretrig_set(all_pmts --> 50)
-  adc.nmaw_pretrig_set(all_pmts --> 50)
+  adc.nsamples_pretrig_set(all_pmts --> 25)
+  adc.nmaw_pretrig_set(all_pmts --> 25)
   
   adc.bank_fill_threshold_stop_set(all_pmts --> false)
 
