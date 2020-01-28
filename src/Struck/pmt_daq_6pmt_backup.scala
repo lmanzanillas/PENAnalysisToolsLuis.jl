@@ -52,7 +52,7 @@ def configureADC_hpge(): Unit = {
   adc.input_invert_set(pmt_1 --> true)
   adc.input_invert_set(other_pmts --> true)
 
-  adc.trigger_gate_window_length_set(all_pmts --> 64)
+  adc.trigger_gate_window_length_set(all_pmts --> 10)
 
   adc.trigger_threshold_set(all_pmts --> 100)
   adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
@@ -75,13 +75,13 @@ def configureADC_hpge(): Unit = {
       save_ft_maw = true,
       save_acc_78 = false,
       save_ph_acc16 = true,
-      nSamples = 64,
-      nMAWValues = 64
+      nSamples = 128,
+      nMAWValues = 128
     )
   )
 
-  adc.nsamples_pretrig_set(all_pmts --> 25)
-  adc.nmaw_pretrig_set(all_pmts --> 25)
+  adc.nsamples_pretrig_set(all_pmts --> 64)
+  adc.nmaw_pretrig_set(all_pmts --> 64)
   
   adc.bank_fill_threshold_stop_set(all_pmts --> false)
 
