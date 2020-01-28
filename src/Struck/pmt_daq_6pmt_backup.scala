@@ -39,8 +39,8 @@ def configureADC_allch(): Unit = {
 }
 
 
-val pmt_1 = 1
-val other_pmts = Ch(2, 3, 4, 5, 6)
+val pmt_1 = 5
+val other_pmts = Ch(2, 3, 4, 1, 6)
 val all_pmts = Ch(pmt_1) ++ other_pmts
 
 
