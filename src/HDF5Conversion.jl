@@ -1,6 +1,5 @@
 """
         convert_struck_to_h5(filename:String; conv_data_dir="../conv_data/")
-
 Converts one Struck (*.dat) file to *.h5 format.
 Structure in the *.h5 file will be:
 - filename (group)
@@ -50,7 +49,6 @@ function convert_struck_to_h5(filename::String; conv_data_dir="../conv_data/")
 
         g["timestamps", "chunk", 500] = dset.evt_t;   
         g["chid", "chunk", 500]       = dset.chid;
-        g["energy", "chunk", 500]       = dset.energy;
         g["samples", "chunk", (500,x), "shuffle", (), "deflate", 3]    = A;
     end
     return nothing
@@ -74,7 +72,6 @@ end
   
 """
         convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_data_dir="../conv_data/")
-
 Converts several Struck (*.dat) file to one *.h5 format.
 Structure in the *.h5 file will be:
 - filename 1 (group)
@@ -140,11 +137,9 @@ function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_d
         y = length(raw_data.evt_t);
         evt_t = float.(zeros(y));
         chid  = Int.(zeros(y));
-        energy  = Int.(zeros(y));
         samples = Int.(zeros(y, x));
         evt_t = raw_data.evt_t;
         chid  = raw_data.chid;
-        energy  = raw_data.energy;
         i = 1
         while i <= length(raw_data.samples)
             samples[i, 1:x] = raw_data.samples[i];
@@ -158,7 +153,6 @@ function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_d
                 g = g_create(f, real_filename)
                 g["timestamps", "chunk", 500] = evt_t;
                 g["chid", "chunk", 500]       = chid;
-                g["energy", "chunk", 500]       = energy;
                 g["samples", "chunk", (500,x), "shuffle", (), "deflate", 3] = samples;
             end
         else
@@ -166,7 +160,6 @@ function convert_dset_to_h5(dset_glob_str::String, conv_filename::String; conv_d
                 g = g_create(f, real_filename)
                 g["timestamps", "chunk", 500] = evt_t;
                 g["chid", "chunk", 500]       = chid;
-                g["energy", "chunk", 500]       = energy;
                 g["samples", "chunk", (500,x), "shuffle", (), "deflate", 3] = samples;
             end
         end
