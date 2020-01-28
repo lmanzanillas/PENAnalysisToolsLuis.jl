@@ -52,12 +52,12 @@ def configureADC_hpge(): Unit = {
   adc.input_invert_set(pmt_1 --> true)
   adc.input_invert_set(other_pmts --> true)
 
-  adc.trigger_gate_window_length_set(all_pmts --> 128)
+  adc.trigger_gate_window_length_set(all_pmts --> 64)
 
-  adc.trigger_threshold_set(all_pmts --> 50)
+  adc.trigger_threshold_set(all_pmts --> 100)
   adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
-  adc.trigger_peakTime_set(all_pmts --> 2)
-  adc.trigger_gapTime_set(all_pmts --> 2)
+  adc.trigger_peakTime_set(all_pmts --> 4)
+  adc.trigger_gapTime_set(all_pmts --> 4)
 
   adc.energy_peakTime_set(all_pmts --> 50)
   adc.energy_gapTime_set(all_pmts --> 20)
@@ -75,13 +75,13 @@ def configureADC_hpge(): Unit = {
       save_ft_maw = true,
       save_acc_78 = false,
       save_ph_acc16 = true,
-      nSamples = 128,
-      nMAWValues = 128
+      nSamples = 64,
+      nMAWValues = 64
     )
   )
 
-  adc.nsamples_pretrig_set(all_pmts --> 80)
-  adc.nmaw_pretrig_set(all_pmts --> 80)
+  adc.nsamples_pretrig_set(all_pmts --> 50)
+  adc.nmaw_pretrig_set(all_pmts --> 50)
   
   adc.bank_fill_threshold_stop_set(all_pmts --> false)
 
