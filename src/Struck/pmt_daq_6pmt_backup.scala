@@ -39,16 +39,16 @@ def configureADC_allch(): Unit = {
 }
 
 
-val pmt_for_trigger = 5
-val other_pmts = Ch(2, 3, 4, 1, 6)
+val pmt_for_trigger = 1
+val other_pmts = Ch(2, 3, 4, 5, 6)
 val all_pmts = Ch(pmt_for_trigger) ++ other_pmts
 
 
 def configureADC_hpge(): Unit = {
   adc.trigger_intern_gen_set(pmt_for_trigger --> true)
-  adc.trigger_intern_gen_set(other_pmts --> true)
+  #adc.trigger_intern_gen_set(other_pmts --> true)
   adc.trigger_intern_feedback_set(pmt_for_trigger-->true)
-  adc.trigger_intern_feedback_set(other_pmts-->true)
+  #adc.trigger_intern_feedback_set(other_pmts-->true)
   adc.trigger_extern_enabled_set(all_pmts --> true)
 
   adc.input_invert_set(pmt_for_trigger --> true)
