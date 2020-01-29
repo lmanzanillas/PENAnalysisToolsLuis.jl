@@ -89,7 +89,7 @@ def configureADC_hpge(): Unit = {
 
   adc.getSync().get
   val rawEventDataSize = adc.event_format_get().get vMap {_.rawEventDataSize}
-  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {4 * _})
+  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {400 * _})
   adc.getSync().get
 }
 
