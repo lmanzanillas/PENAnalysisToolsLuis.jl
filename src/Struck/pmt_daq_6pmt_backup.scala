@@ -48,6 +48,7 @@ def configureADC_hpge(): Unit = {
   adc.trigger_intern_gen_set(pmt_for_trigger --> true)
   adc.trigger_intern_gen_set(other_pmts --> true)
   adc.trigger_intern_feedback_set(pmt_for_trigger-->true)
+  adc.trigger_intern_feedback_set(other_pmts-->true)
   adc.trigger_extern_enabled_set(all_pmts --> true)
 
   adc.input_invert_set(pmt_for_trigger --> true)
