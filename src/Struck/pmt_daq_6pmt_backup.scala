@@ -54,15 +54,17 @@ def configureADC_hpge(): Unit = {
   adc.input_invert_set(pmt_for_trigger --> true)
   adc.input_invert_set(other_pmts --> true)
 
-  adc.trigger_gate_window_length_set(all_pmts --> 10)
+  adc.trigger_gate_window_length_set(all_pmts --> 128)
 
   adc.trigger_threshold_set(all_pmts --> 40)
   adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
-  adc.trigger_peakTime_set(all_pmts --> 4)
-  adc.trigger_gapTime_set(all_pmts --> 4)
+  adc.trigger_peakTime_set(all_pmts --> 2)
+  adc.trigger_gapTime_set(all_pmts --> 2)
 
   adc.energy_peakTime_set(all_pmts --> 50)
   adc.energy_gapTime_set(all_pmts --> 20)
+
+  
 
   adc.energy_tau_table_set(pmt_for_trigger --> 0)
   adc.energy_tau_factor_set(pmt_for_trigger --> 0)
