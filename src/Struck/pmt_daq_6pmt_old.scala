@@ -30,15 +30,26 @@ println(s"ADC identity: ${adc.identity.get}, serial number ${adc.serNo.get}")
 println(s"ADC temperature: ${adc.internalTemperature.get} °C")
 
 
-val pmt1 = Ch(1)
-val pmt2 = Ch(2)
-val pmt3 = Ch(3)
-val pmt4 = Ch(4)
-val pmt5 = Ch(5)
-val pmt6 = Ch(6)
-val pmtChannels = Ch(pmt1, pmt2, pmt3, pmt4, pmt5, pmt6)
-
+//val pmt1 = Ch(1)
+//val pmt2 = Ch(2)
+//val pmt3 = Ch(3)
+//val pmt4 = Ch(4)
+//val pmt5 = Ch(5)
+//val pmt6 = Ch(6)
+//val pmtChannels = Ch(pmt1, pmt2, pmt3, pmt4, pmt5, pmt6)
 //Channels START
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Channels END
 
@@ -46,9 +57,8 @@ val allChannels = pmtChannels
 
 
 def configureADC_allch(): Unit = {
-  adc.trigger_intern_gen_set(allChannels --> false)
-  adc.trigger_intern_feedback_set(allChannels --> false)
   adc.trigger_extern_enabled_set(allChannels --> false)
+  adc.trigger_intern_enabled_set(allChannels --> false)
   adc.event_format_set(allChannels --> EventFormat())
   adc.bank_fill_threshold_stop_set(allChannels --> false)
   adc.getSync().get
@@ -56,12 +66,8 @@ def configureADC_allch(): Unit = {
 
 
 def configureADC_allPMT(): Unit = {
-  adc.trigger_intern_gen_set(allChannels --> true)
-  adc.trigger_intern_feedback_set(allChannels-->true)
-  adc.trigger_extern_enabled_set(allChannels --> true)
-
-  adc.input_invert_set(allChannels --> true)
-
+  adc.trigger_intern_enabled_set(pmtChannels --> true)
+  adc.input_invert_set(pmtChannels --> true)
 
   val peakTime = 2
   val gapTime  = 2
@@ -71,7 +77,41 @@ def configureADC_allPMT(): Unit = {
   val threshold_1 = 55
   val trigger_pmt1 = pmt1
   adc.trigger_threshold_set(trigger_pmt1 --> trigger)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Threshold STOP
+
 
   adc.trigger_gate_window_length_set(pmtChannels --> nSamples)
 
@@ -107,11 +147,9 @@ def configureADC_allPMT(): Unit = {
   adc.nsamples_pretrig_set(pmtChannels --> nPreTrig)
   adc.nmaw_pretrig_set(pmtChannels --> nPreTrig)
 
-  adc.bank_fill_threshold_stop_set(pmtChannels --> false)
-
   adc.getSync().get
   val rawEventDataSize = adc.event_format_get(pmtChannels).get vMap {_.rawEventDataSize}
-  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {4 * _})
+  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {400 * _})
   adc.getSync().get
 }
 
