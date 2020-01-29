@@ -47,7 +47,7 @@ val all_pmts = Ch(pmt_for_trigger) ++ other_pmts
 def configureADC_hpge(): Unit = {
   adc.trigger_intern_gen_set(pmt_for_trigger --> true)
   adc.trigger_intern_feedback_set(pmt_for_trigger-->true)
-  adc.trigger_intern_gen_set(other_pmts --> true)
+  //adc.trigger_intern_gen_set(other_pmts --> true)
   adc.trigger_intern_feedback_set(other_pmts-->true)
   adc.trigger_extern_enabled_set(all_pmts --> true)
 
@@ -56,7 +56,7 @@ def configureADC_hpge(): Unit = {
 
   adc.trigger_gate_window_length_set(all_pmts --> 10)
 
-  adc.trigger_threshold_set(all_pmts --> 55)
+  adc.trigger_threshold_set(all_pmts --> 25)
   adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
   adc.trigger_peakTime_set(all_pmts --> 4)
   adc.trigger_gapTime_set(all_pmts --> 4)
