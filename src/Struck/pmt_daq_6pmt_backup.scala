@@ -67,6 +67,8 @@ def configureADC_allch(): Unit = {
 
 def configureADC_allPMT(): Unit = {
   adc.trigger_intern_enabled_set(pmtChannels --> true)
+  adc.trigger_intern_feedback_set(pmtChannels-->true)
+  adc.trigger_extern_enabled_set(pmtChannels --> true)
   adc.input_invert_set(pmtChannels --> true)
 
   val peakTime = 2
