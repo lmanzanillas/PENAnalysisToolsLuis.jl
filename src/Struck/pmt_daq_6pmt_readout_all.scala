@@ -39,17 +39,17 @@ def configureADC_allch(): Unit = {
 }
 
 
-val pmt_1 = 5
+val pmt_for_trigger = 5
 val other_pmts = Ch(2, 3, 4, 1, 6)
-val all_pmts = Ch(pmt_1) ++ other_pmts
+val all_pmts = Ch(pmt_for_trigger) ++ other_pmts
 
 
 def configureADC_hpge(): Unit = {
-  adc.trigger_intern_gen_set(pmt_1 --> true)
-  adc.trigger_intern_feedback_set(pmt_1-->true)
+  adc.trigger_intern_gen_set(pmt_for_trigger --> true)
+  adc.trigger_intern_feedback_set(pmt_for_trigger-->true)
   adc.trigger_extern_enabled_set(all_pmts --> true)
 
-  adc.input_invert_set(pmt_1 --> true)
+  adc.input_invert_set(pmt_for_trigger --> true)
   adc.input_invert_set(other_pmts --> true)
 
   adc.trigger_gate_window_length_set(all_pmts --> 10)
@@ -62,8 +62,8 @@ def configureADC_hpge(): Unit = {
   adc.energy_peakTime_set(all_pmts --> 50)
   adc.energy_gapTime_set(all_pmts --> 20)
 
-  adc.energy_tau_table_set(pmt_1 --> 0)
-  adc.energy_tau_factor_set(pmt_1 --> 0)
+  adc.energy_tau_table_set(pmt_for_trigger --> 0)
+  adc.energy_tau_factor_set(pmt_for_trigger --> 0)
 
   adc.energy_tau_table_set(other_pmts --> 0)
   adc.energy_tau_factor_set(other_pmts --> 0)
