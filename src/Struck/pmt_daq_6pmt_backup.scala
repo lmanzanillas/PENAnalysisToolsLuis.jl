@@ -1,6 +1,6 @@
 #!/usr/bin/env daqcore-scala-fadc
 
-// Syntax: seg-bege-daq.scala ADC_HOSTNAME OUTPUT_BASENAME MEAS_TIME_IN_SEC
+// :paste run-pen-pmt.scala
 
 import scala.async.Async.{async, await}
 import scala.concurrent.{Future, Promise}, scala.concurrent.duration._
@@ -16,18 +16,24 @@ def exit() = { daqcoreSystem.shutdown(); daqcoreSystem.awaitTermination(); sys.e
 object logger extends Logging
 logger.info("Ready")
 
+//val outputBasename = "test"
 
-//if (args.size != 3) throw new RuntimeException("Invalid number of command line arguments")
 
-val adcHostname = "gelab-fadc08"
-val outputBasename = args(1)
-val measurementTime = args(2).toInt
+if (args.size != 3) throw new RuntimeException("Invalid number of command line arguments")
+val outputBasename = args(0)
+val measurementTime = args(1).toInt
+val trigger = args(2).toInt
 
-logger.info("ADC hostname: $adcHostname")
-logger.info("Output basename: $outputBasename")
-logger.info("Measurement time: $measurementTime s")
+val adc = SIS3316("vme-sis3316://gelab-fadc08", "adc")
 
-val adc = SIS3316(s"vme-sis3316://$adcHostname", "adc")
+println(s"ADC identity: ${adc.identity.get}, serial number ${adc.serNo.get}")
+println(s"ADC temperature: ${adc.internalTemperature.get} °C")
+
+
+val pmt1 = Ch(5)
+val pmtChannels = pmt1
+
+val allChannels = pmtChannels
 
 
 def configureADC_allch(): Unit = {
@@ -39,97 +45,107 @@ def configureADC_allch(): Unit = {
 }
 
 
-val pmt_1 = 5
-val other_pmts = Ch(2, 3, 4, 1, 6)
-val all_pmts = Ch(pmt_1) ++ other_pmts
+def configureADC_allPMT(): Unit = {
+  adc.trigger_intern_enabled_set(pmtChannels --> true)
+  adc.input_invert_set(pmtChannels --> true)
 
+  val peakTime = 2 //2
+  val gapTime = 2
+  val nPreTrig = 256 //64
+  val nSamples =  512 //128
+  adc.trigger_gate_window_length_set(pmtChannels --> nSamples)
 
-def configureADC_hpge(): Unit = {
-  adc.trigger_intern_gen_set(pmt_1 --> true)
-  adc.trigger_intern_feedback_set(pmt_1-->true)
-  adc.trigger_extern_enabled_set(all_pmts --> true)
+  adc.trigger_threshold_set(pmt1 --> trigger)
 
-  adc.input_invert_set(pmt_1 --> true)
-  adc.input_invert_set(other_pmts --> true)
+  adc.trigger_cfd_set(pmtChannels --> CfdCtrl.CDF50Percent)
+  adc.trigger_peakTime_set(pmtChannels --> peakTime)
+  adc.trigger_gapTime_set(pmtChannels --> 2)
 
-  adc.trigger_gate_window_length_set(all_pmts --> 10)
+  adc.acc_start_set(1)(pmtChannels --> 0).get
+  adc.acc_length_set(1)(pmtChannels --> peakTime).get
 
-  adc.trigger_threshold_set(all_pmts --> 100)
-  adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
-  adc.trigger_peakTime_set(all_pmts --> 4)
-  adc.trigger_gapTime_set(all_pmts --> 4)
+  adc.acc_start_set(2)(pmtChannels --> (peakTime + gapTime)).get
+  adc.acc_length_set(2)(pmtChannels --> peakTime).get
 
-  adc.energy_peakTime_set(all_pmts --> 50)
-  adc.energy_gapTime_set(all_pmts --> 20)
+  adc.acc_start_set(3)(pmtChannels --> (peakTime + gapTime - 10)).get
+  adc.acc_length_set(3)(pmtChannels --> 10).get
 
-  adc.energy_tau_table_set(pmt_1 --> 0)
-  adc.energy_tau_factor_set(pmt_1 --> 0)
+  adc.acc_start_set(4)(pmtChannels --> (peakTime + gapTime)).get
+  adc.acc_length_set(4)(pmtChannels --> 10).get
 
-  adc.energy_tau_table_set(other_pmts --> 0)
-  adc.energy_tau_factor_set(other_pmts --> 0)
-
-  adc.event_format_set(all_pmts -->
+  adc.event_format_set(pmtChannels -->
     EventFormat(
       save_maw_values = None,
-      save_energy = true,
+      save_energy = false,
       save_ft_maw = true,
       save_acc_78 = false,
       save_ph_acc16 = true,
-      nSamples = 128,
-      nMAWValues = 128
+      nSamples = nSamples,
+      nMAWValues = nSamples
     )
   )
 
-  adc.nsamples_pretrig_set(all_pmts --> 94)
-  adc.nmaw_pretrig_set(all_pmts --> 94)
-  
-  adc.bank_fill_threshold_stop_set(all_pmts --> false)
+  adc.nsamples_pretrig_set(pmtChannels --> nPreTrig)
+  adc.nmaw_pretrig_set(pmtChannels --> nPreTrig)
 
   adc.getSync().get
-  val rawEventDataSize = adc.event_format_get().get vMap {_.rawEventDataSize}
-  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {4 * _})
+  val rawEventDataSize = adc.event_format_get(pmtChannels).get vMap {_.rawEventDataSize}
+  adc.bank_fill_threshold_nbytes_set(rawEventDataSize vMap {400 * _})
   adc.getSync().get
 }
 
 
-def configureADC(): Unit = {
+def configureADCs(): Unit = {
   configureADC_allch()
-  configureADC_hpge()
+  configureADC_allPMT()
 }
 
 
 def printStatus() {
-  println(s"ADC identity: ${adc.identity.get}, serial number ${adc.serNo.get}")
-  println(s"ADC temperature: ${adc.internalTemperature.get} Â°C")
   println(s"Buffer count: ${adc.buffer_counter_get.get}")
+  println(s"ADC temperature: ${adc.internalTemperature.get} Â°C")
 }
 
+configureADCs()
+printStatus()
 
-def stopAfter(delay: FiniteDuration): (Future[Unit], Cancellable) = {
-  val p = Promise[Unit]()
-  val s = scheduleOnce(delay) {
-    async {
-      if (await(adc.capture_enabled_get)) {
-        adc.stopCapture() onComplete {_ => p.success({})}
-      }
-    }
-  }
-  (p.future, s)
-}
 
-def runFor(time: FiniteDuration): (Future[Unit], Cancellable) = {
+adc.raw_output_file_basename_set(s"${outputBasename}")
+
+def start() = {
   adc.startCapture()
-  stopAfter(time)
 }
 
-configureADC()
+def stop() = {
+  adc.stopCapture()
+}
 
-adc.raw_output_file_basename_set(outputBasename)
-//adc.props_output_file_basename_set(outputBasename)
+import java.io.File
+def getListOfFiles(dir: File, extensions: List[String]): List[File] = {
+    dir.listFiles.filter(_.isFile).toList.filter { file =>
+        extensions.exists(file.getName.endsWith(_))
+    }
+}
 
-val (stopped, runCancellable) = runFor(measurementTime.seconds)
-adc.getSync().get
-println(adc.raw_output_file_name_get.get)
+logger.info("Output basename: $outputBasename")
+logger.info("Measurement time: $measurementTime s")
 
-stopped onComplete {_ => exit() }
 
+println(s"Output basename: ${outputBasename}")
+println(s"Measuring for ${measurementTime} s")
+
+start()
+Thread.sleep(measurementTime*1000)
+stop()
+
+// now, wait till conversion from .tmp to .dat file has been completed.
+val files = getListOfFiles(new File("."), List("tmp")) // files in current directory with extension ".tmp"
+var n_tmp_files = files.length
+while(n_tmp_files != 0){
+  Thread.sleep(1000)
+  val files = getListOfFiles(new File("."), List("tmp")) // files in current directory with extension ".tmp"
+  n_tmp_files = files.length
+}
+Thread.sleep(1000) // sleep 1s for security
+
+exit()
