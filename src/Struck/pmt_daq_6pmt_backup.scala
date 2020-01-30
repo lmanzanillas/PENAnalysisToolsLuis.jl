@@ -39,8 +39,8 @@ def configureADC_allch(): Unit = {
 }
 
 
-val pmt_for_trigger = 5
-val other_pmts = Ch(2, 3, 4, 1, 6)
+val pmt_for_trigger = 7
+val other_pmts = Ch(2, 3, 4, 1, 6,5)
 val all_pmts = Ch(pmt_for_trigger) ++ other_pmts
 
 
@@ -56,7 +56,7 @@ def configureADC_hpge(): Unit = {
 
   adc.trigger_gate_window_length_set(all_pmts --> 10)
 
-  adc.trigger_threshold_set(all_pmts --> 85)
+  adc.trigger_threshold_set(all_pmts --> 35)
   adc.trigger_cfd_set(all_pmts --> CfdCtrl.CDF50Percent)
   adc.trigger_peakTime_set(all_pmts --> 4)
   adc.trigger_gapTime_set(all_pmts --> 4)
